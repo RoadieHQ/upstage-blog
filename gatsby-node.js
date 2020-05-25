@@ -1,4 +1,5 @@
 const path = require(`path`)
+const fs = require("fs")
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -61,4 +62,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value,
     })
   }
+}
+
+
+exports.onPostBuild = () => {
+  fs.renameSync(path.join(__dirname, 'public'), path.join(__dirname, 'temp-public'));
+  fs.mkdirSync(path.join(__dirname, 'public'));
+  fs.renameSync(path.join(__dirname, 'temp-public'), path.join(__dirname, 'public', 'blog'));
 }
