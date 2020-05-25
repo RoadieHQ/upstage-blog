@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Larder Blog`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `David Tuite`,
+      summary: `builder of things for developers`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `Microservice observability for SREs and Ops`,
     siteUrl: `https://larder.dev`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `LarderHQ`,
     },
   },
   pathPrefix: `/blog`,
