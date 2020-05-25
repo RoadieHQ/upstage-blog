@@ -6,11 +6,12 @@ module.exports = {
       summary: `who lives and works in San Francisco building useful things.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    siteUrl: `https://larder.dev`,
     social: {
       twitter: `kylemathews`,
     },
   },
+  pathPrefix: `/blog`,
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,

@@ -65,6 +65,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 }
 
 
+// I want the Landen landing pages to display on larder.dev and the blog to display on
+// larder.dev/blog. The blog is hosted on Netlify and the landing pages on landen.co with a
+// proxy for all /blog* traffic. Landen doesn't rewrite the URL paths so I need my blog to
+// actually live in a /blog subdirectory when it is hosted on Netlify. This is how to achieve
+// such a feat. I also need to pass the --prefix-paths flag to gatsby build and gatsby serve or
+// else links in the Gatsby blog will send users to the wrong place.
 exports.onPostBuild = () => {
   fs.renameSync(path.join(__dirname, 'public'), path.join(__dirname, 'temp-public'));
   fs.mkdirSync(path.join(__dirname, 'public'));
