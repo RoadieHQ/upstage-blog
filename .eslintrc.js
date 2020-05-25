@@ -5,10 +5,7 @@ module.exports = {
     node: true,
   },
 
-  'extends': [
-    'eslint:recommended',
-    'plugin:react/recommended',
-  ],
+  extends: ['eslint:recommended', 'plugin:react/recommended'],
 
   globals: {
     Atomics: 'readonly',
@@ -24,9 +21,7 @@ module.exports = {
     sourceType: 'module',
   },
 
-  plugins: [
-    'react',
-  ],
+  plugins: ['react'],
 
   rules: {
     'react/jsx-filename-extension': 0,
