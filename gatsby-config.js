@@ -1,4 +1,4 @@
-const BLOG_NAME = `Larder Blog`;
+const BLOG_NAME = `Upstage Blog`;
 
 module.exports = {
   siteMetadata: {
@@ -7,9 +7,9 @@ module.exports = {
       name: `David Tuite`,
       summary: `builder of things for developers`,
     },
-    description: `Microservice observability for SREs and Ops`,
-    bio: 'Larder is a service catalog for cloud-native companies.',
-    siteUrl: `https://larder.dev`,
+    description: `Hosted, managed Backstage`,
+    bio: 'Upstage offers hosted, managed Backstage with enterprise features',
+    siteUrl: `https://upstage.dev`,
     social: {
       twitter: `LarderHQ`,
     },
@@ -57,7 +57,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        // This tracking ID should match the one used by Landen.co or whatever other landing
+        // This tracking ID should match the one used by landen.co or whatever other landing
         // page generator I am using. It's all on the same domain name so it should all use the
         // same tracking ID.
         trackingId: `UA-166771003-1`,
