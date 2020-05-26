@@ -63,9 +63,13 @@ const Layout = ({ location, title, children }) => {
 
   header = (
     <div className={classes.logoContainer} style={logoContainerStyles}>
-      <Link to="/" className={classes.logoLink}>
+      {/* This is a regular anchor tag because we want to link outside of Gatsby to the root
+        * of the application. If we use the Gatsby <Link /> component it will prefix with
+        * /blog in production and send us to the blog instead of the main app
+        */}
+      <a href="/" className={classes.logoLink}>
         <h1 className={classes.logoText}>{title}</h1>
-      </Link>
+      </a>
     </div>
   );
 

@@ -51,10 +51,10 @@
     "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
   },
   "scripts": {
-    "build": "gatsby build --prefix-paths",
-    "develop": "gatsby develop",
+    "build": "yarn run clean && gatsby build --prefix-paths",
+    "develop": "yarn run clean && gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md,tsx}\"",
-    "start": "npm run develop",
+    "start": "yarn run develop",
     "serve": "gatsby serve --prefix-paths",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
