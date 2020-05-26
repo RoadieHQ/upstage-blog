@@ -1,6 +1,7 @@
 // Gatsby supports TypeScript natively!
-import React from "react"
+import React from 'react';
 import { PageProps, Link, graphql } from "gatsby"
+import { createUseStyles } from 'react-jss';
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -30,9 +31,21 @@ type Data = {
   }
 }
 
+const useStyles = createUseStyles({
+  Link: {
+    boxShadow: 'none',
+  },
+
+  h3: {
+    marginBottom: rhythm(1 / 4),
+  },
+});
+
+
 const BlogIndex = ({ data, location }: PageProps<Data>) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
+  const classes = useStyles();
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -43,12 +56,8 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
         return (
           <article key={node.fields.slug}>
             <header>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+              <h3 className={classes.h3}>
+                <Link className={classes.Link} to={node.fields.slug}>
                   {title}
                 </Link>
               </h3>
@@ -77,6 +86,7 @@ export const pageQuery = graphql`
         title
       }
     }
+
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
