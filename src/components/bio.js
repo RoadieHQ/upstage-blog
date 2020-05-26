@@ -17,33 +17,13 @@ const useStyles = createUseStyles({
     display: `flex`,
     marginBottom: rhythm(2.5),
   },
-
-  image: {
-    marginRight: rhythm(1 / 2),
-    marginBottom: 0,
-    minWidth: 50,
-    borderRadius: `100%`,
-  },
 });
 
 const QUERY = graphql`
   query BioQuery {
-    avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
-      childImageSharp {
-        fixed(width: 50, height: 50) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
     site {
       siteMetadata {
-        author {
-          name
-          summary
-        }
-        social {
-          twitter
-        }
+        bio
       }
     }
   }
@@ -51,25 +31,12 @@ const QUERY = graphql`
 
 const Bio = () => {
   const data = useStaticQuery(QUERY);
-  const { author, social } = data.site.siteMetadata;
+  const { bio } = data.site.siteMetadata;
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <Image
-        fixed={data.avatar.childImageSharp.fixed}
-        alt={author.name}
-        className={classes.image}
-        imgStyle={{
-          borderRadius: `50%`,
-        }}
-      />
-
-      <p>
-        Written by <strong>{author.name}</strong> {author.summary}
-        {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>You should follow him on Twitter</a>
-      </p>
+      <p>{bio}</p>
     </div>
   );
 };

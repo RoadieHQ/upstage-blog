@@ -2,15 +2,9 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 
-import { rhythm, scale } from '../utils/typography';
+import { rhythm } from '../utils/typography';
 
 const useStyles = createUseStyles({
-  h1: {
-    ...scale(1.5),
-    marginBottom: rhythm(1.5),
-    marginTop: 0,
-  },
-
   h3: {
     fontFamily: `Montserrat, sans-serif`,
     marginTop: 0,
@@ -27,39 +21,57 @@ const useStyles = createUseStyles({
     maxWidth: rhythm(24),
     padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
   },
+
+  logoText: {
+    display: 'none',
+  },
+
+  logoLink: {
+    height: '100%',
+    width: '100%',
+    display: 'block',
+    textDecoration: 'none',
+    outline: 'none',
+    boxShadow: 'none',
+  },
+
+  logoContainer: {
+    backgroundImage: 'url("/logo/name-and-mark-476x173-1x.png")',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'contain',
+    marginBottom: 24,
+  },
 });
 
 const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`;
   let header;
   const classes = useStyles();
+  const rootPath = `${__PATH_PREFIX__}/`;
 
-  if (location.pathname === rootPath) {
-    header = (
-      <h1 className={classes.h1}>
-        <Link className={classes.Link} to={`/`}>
-          {title}
-        </Link>
-      </h1>
-    );
-  } else {
-    header = (
-      <h3 className={classes.h3}>
-        <Link className={classes.Link} to={`/`}>
-          {title}
-        </Link>
-      </h3>
-    );
+  const logoContainerStyles = {
+    height: 173 / 2,
+    width: 476 / 2,
+  };
+
+  if (location.pathname !== rootPath) {
+    logoContainerStyles.height = logoContainerStyles.height / 2;
+    logoContainerStyles.width = logoContainerStyles.width / 2;
   }
+
+  header = (
+    <div className={classes.logoContainer} style={logoContainerStyles}>
+      <Link to="/" className={classes.logoLink}>
+        <h1 className={classes.logoText}>{title}</h1>
+      </Link>
+    </div>
+  );
 
   return (
     <div className={classes.root}>
       <header>{header}</header>
       <main>{children}</main>
       <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
+        © {new Date().getFullYear()} Larder, Inc.
       </footer>
     </div>
   );

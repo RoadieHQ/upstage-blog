@@ -6,6 +6,7 @@ module.exports = {
       summary: `builder of things for developers`,
     },
     description: `Microservice observability for SREs and Ops`,
+    bio: 'Larder is a service catalog for cloud-native companies.',
     siteUrl: `https://larder.dev`,
     social: {
       twitter: `LarderHQ`,
