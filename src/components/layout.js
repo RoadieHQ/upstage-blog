@@ -1,8 +1,11 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, withPrefix } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 
 import { rhythm } from '../utils/typography';
+
+// withPrefix is required because in production the path needs to be prefixed with /blog.
+const NAME_AND_MARK = withPrefix('/logo/name-and-mark-476x173-1x.png');
 
 const useStyles = createUseStyles({
   h3: {
@@ -36,7 +39,7 @@ const useStyles = createUseStyles({
   },
 
   logoContainer: {
-    backgroundImage: 'url("/logo/name-and-mark-476x173-1x.png")',
+    backgroundImage: `url("${NAME_AND_MARK}")`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'contain',
     marginBottom: 24,
