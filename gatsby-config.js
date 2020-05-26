@@ -55,7 +55,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        // This tracking ID should match the one used by Landen.co or whatever other landing
+        // page generator I am using. It's all on the same domain name so it should all use the
+        // same tracking ID.
+        trackingId: `UA-166771003-1`,
       },
     },
     `gatsby-plugin-feed`,
