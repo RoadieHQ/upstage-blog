@@ -49,17 +49,18 @@ const useStyles = createUseStyles({
 const Layout = ({ location, title, children }) => {
   let header;
   const classes = useStyles();
-  const rootPath = `${__PATH_PREFIX__}/`;
+  // const rootPath = `${__PATH_PREFIX__}/`;
 
-  const logoContainerStyles = {
-    height: 173 / 2,
-    width: 476 / 2,
-  };
+  const logoContainerStyles = {};
+  // const logoContainerStyles = {
+  //   height: 173 / 2,
+  //   width: 476 / 2,
+  // };
 
-  if (location.pathname !== rootPath) {
-    logoContainerStyles.height = logoContainerStyles.height / 2;
-    logoContainerStyles.width = logoContainerStyles.width / 2;
-  }
+  // if (location.pathname !== rootPath) {
+  //   logoContainerStyles.height = logoContainerStyles.height / 2;
+  //   logoContainerStyles.width = logoContainerStyles.width / 2;
+  // }
 
   header = (
     <div className={classes.logoContainer} style={logoContainerStyles}>
