@@ -1,35 +1,35 @@
 // Gatsby supports TypeScript natively!
 import React from 'react';
-import { PageProps, Link, graphql } from "gatsby"
+import { PageProps, Link, graphql } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import Bio from '../components/bio';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import { rhythm } from '../utils/typography';
 
 type Data = {
   site: {
     siteMetadata: {
-      title: string
-    }
-  }
+      title: string;
+    };
+  };
   allMarkdownRemark: {
     edges: {
       node: {
-        excerpt: string
+        excerpt: string;
         frontmatter: {
-          title: string
-          date: string
-          description: string
-        }
+          title: string;
+          date: string;
+          description: string;
+        };
         fields: {
-          slug: string
-        }
-      }
-    }[]
-  }
-}
+          slug: string;
+        };
+      };
+    }[];
+  };
+};
 
 const useStyles = createUseStyles({
   Link: {
@@ -41,10 +41,9 @@ const useStyles = createUseStyles({
   },
 });
 
-
 const BlogIndex = ({ data, location }: PageProps<Data>) => {
-  const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+  const siteTitle = data.site.siteMetadata.title;
+  const posts = data.allMarkdownRemark.edges;
   const classes = useStyles();
 
   return (
@@ -52,7 +51,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
       <SEO title="All posts" />
       <Bio />
       {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
+        const title = node.frontmatter.title || node.fields.slug;
         return (
           <article key={node.fields.slug}>
             <header>
@@ -71,13 +70,13 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
               />
             </section>
           </article>
-        )
+        );
       })}
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogIndex
+export default BlogIndex;
 
 export const pageQuery = graphql`
   query {
@@ -103,4 +102,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

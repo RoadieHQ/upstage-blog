@@ -29,7 +29,6 @@ const useStyles = createUseStyles({
   },
 });
 
-
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
   let header;
