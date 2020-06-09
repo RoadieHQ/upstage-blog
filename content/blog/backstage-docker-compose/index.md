@@ -1,10 +1,10 @@
 ---
-title: Running Backstage with Docker compose
+title: Running Backstage with Docker Compose
 date: '2020-05-25T21:00:00.0Z'
-description: Docker-compose is a handly way to run Backstage for development or light use. Here's a setup which will get you started with Backstage quickly.
+description: Docker Compose is a handly way to run Backstage for development or light use. Here's a setup which will get you started with Backstage quickly.
 ---
 
-To run Backstage and the Lighthouse plugin with `docker-compose` we need three things
+To run Backstage and the Lighthouse plugin with Docker Compose we need three things
 
 1. Postgres so that Lighthouse has a place to store the data it generates.
 2. The Lighthouse Audit Service

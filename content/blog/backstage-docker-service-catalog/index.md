@@ -160,3 +160,4 @@ Luckily, the Backstage folk have created a quick solution to this problem. Run t
 
 ![The catalog displaying dummy data](./with-dummy-data.png)
 
+If you want to see how to add the Lighthouse plugin and a Postgres database to this setup, check out [this post](/backstage-docker-compose).

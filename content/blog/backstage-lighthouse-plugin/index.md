@@ -1,7 +1,7 @@
 ---
 title: How to use the Backstage Lighthouse plugin.
 date: '2020-05-23T21:00:00.0Z'
-description: 
+description: The first plugin shipped by the Backstage team is a Lighthouse plugin. It allows you to track your website speed over time in Backstage.
 ---
 
 Lighthouse is an open-source, automated tool for improving the quality of web pages. You give it the URL of a web page, it loads the page and runs tests to check the page's quality.
@@ -17,7 +17,7 @@ You can also use Lighthouse via the Chrome DevTools, the command line and as a N
 » lighthouse https://www.davidtuite.com/
 ```
 
-# Lighthouse with Backstage
+## Lighthouse with Backstage
 
 In your company, there may be many teams making websites for different purposes. It is useful to track the quality of these websites over time to ensure that code changes are not hurting performance or accessibility.
 
@@ -31,7 +31,7 @@ You can track the results of Lighthouse tests over time to see if your site is p
 
 ![Sites trending over time in the plugin](./audit-list.png)
 
-# Running Lighthouse with Backstage
+## Running Lighthouse with Backstage
 
 To use Lighthouse with Backstage, you need three things:
 
@@ -41,7 +41,7 @@ To use Lighthouse with Backstage, you need three things:
 
 Let's set them up in reverse order.
 
-## PostgreSQL
+### PostgreSQL
 
 Assuming you already have posgresql installed and running, you can easily create a database for Lighthouse with the following command. The database this creates will have no password but it's fine for local development.
 
@@ -61,7 +61,7 @@ lighthouse_audit_service=#
 
 Fantastic.
 
-## Lighthouse microservice
+### Lighthouse microservice
 
 We're going to run the Lighthouse microservice with docker. We'll have to pass a few environment variables to our Docker run command. The easiest way to do this is by putting them in a file.
 
@@ -91,7 +91,7 @@ info: listening on port 3003 {"service":"lighthouse-audit-service","timestamp":"
 
 It might take a few seconds to start up when you run it for the first time because it will have to download the Docker container from the internet. When it starts, it automatically runs some database migrations to prepare your database.
 
-## Backstage with the Lighthouse Plugin
+### Backstage with the Lighthouse Plugin
 
 Luckily for us, Backstage comes with the Lighthouse Plugin installed and enabled so it's easy to try it out.
 
