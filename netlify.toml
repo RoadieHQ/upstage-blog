@@ -15,3 +15,9 @@
   to = "https://roadie.io/blog/backstage-lighthouse-plugin"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/blog/"
+  to = "https://roadie.io/blog/"
+  status = 301
+  force = true
