@@ -1,0 +1,14 @@
+[[redirects]]
+  from = "/blog/backstage-docker-service-catalog/"
+  to = "https://roadie.io/blog/backstage-docker-service-catalog/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/backstage-docker-compose/"
+  to = "https://roadie.io/blog/backstage-docker-compose/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/backstage-lighthouse-plugin/"
+  to = "https://roadie.io/blog/backstage-lighthouse-plugin"
+  status = 301
